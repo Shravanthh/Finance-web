@@ -1,0 +1,176 @@
+html, body
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	color: #000000;
+	background-image:downbackground.png;
+	background-color:#f2f2f2;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  position: relative;
+    cursor: pointer;
+}
+
+
+
+li a:hover {
+  background-color: #111;
+}
+
+.sub-header {
+	background-color: #a4c639;
+	height: 46px;
+	line-height: 46px;
+}
+
+.downbackground {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.container {
+  position: relative;
+  width: 20%;
+  height: 25;
+  font-size:75px;
+}
+
+.container2 {
+  position: relative;
+  width: 100%;
+  height:1%;
+  font-size:75px;
+}
+
+.image1 {
+  position:absolute;
+ top:100;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 50%;
+  height: 25;
+  cursor: pointer;
+}
+
+.inname{
+  position: absolute;
+  width: 300px;
+  height: 40px;
+  left: 40%;
+  top: 25px;
+  z-index:10px
+  font-family: Impact, Charcoal, sans-serif;
+  font-size:41px;
+}
+
+.note {
+	position: relative;
+	font-size:25px;
+}
+
+.ivnote {
+	position: absolute;
+	bottom:10px;
+	right:380px;
+	font-size:15px;
+}
+
+.bname{
+  position: absolute;
+  width: 300px;
+  height: 40px;
+  left: 40%;
+  top: 25px;
+  z-index:10px
+  font-family: Impact, Charcoal, sans-serif;
+  font-size:41px;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position:static;
+  
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.inbuttons {
+	position:relative;
+	top:5%;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 25px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.downimage {
+	position: relative;
+	left:300;
+}
+
+.investcal {
+  position: absolute;
+  width: 300px;
+  height: 40px;
+  left: 40%;
+  top: 30%;
+  z-index:10px
+  font-family: Impact, Charcoal, sans-serif
+}

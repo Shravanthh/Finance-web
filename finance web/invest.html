@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="TemplateMo">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+		
+		<title> Invest </title> 
+	
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/fontawesome.css">
+		<link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
+		<link rel="stylesheet" href="assets/css/owl.css">
+	
+	
+		<script>
+			function maturity()
+			{
+				var principal=document.getElementById('principal').value;
+				var rate=document.getElementById('rate').value;
+				var ci=document.getElementById('ci').value;
+				var time=document.getElementById('time').value;
+				var irate=rate/ci;
+				var mv=document.getElementById('mv').value;
+				document.getElementById('mv').value=(document.getElementById('principal').value*Math.pow((1 + irate/100),(time/12*ci))).toFixed(2);
+				document.getElementById('mv1').value=((document.getElementById('principal').value*Math.pow((1 + irate/100),(time/12*ci))).toFixed(2)-principal);
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div id="preloader">
+			<div class="jumper">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>	
+		</div> 
+	
+	
+		<div class="sub-header">
+			  <div class="container">
+				<div class="row">
+				  <div class="col-md-8 col-xs-12">
+					<ul class="left-info">
+					  <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
+					  <li><a href="#"><i class="fa fa-phone"></i>953-581-7251</a></li>
+					</ul>
+				  </div>
+				  <div class="col-md-4">
+					<ul class="right-icons">
+					  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+		</div>
+	
+		<header class="">
+			  <nav class="navbar navbar-expand-lg">
+				<div class="container">
+				  <a class="navbar-brand" href="index.html"><h2>Finance Company</h2></a>
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+					  <li class="nav-item active">
+						<a class="nav-link" href="index.html">Home
+						  <span class="sr-only">(current)</span>
+						</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="">About Us</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="borrow.html">Loan</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="invest.html">Invest</a>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			  </nav>
+		</header>
+		
+		
+		 <div class="page-heading header-text">
+		  <div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				<h1>Invest Calculator</h1>
+				<span><p>Fixed deposit calculator will help you calculate how much rate of interest you can earn by investing in an Fixed Deposit for a fixed tenure. Simply provide the following information, and you can easily calculate FD interests.</p></span>
+			  </div>
+			</div>
+		  </div>
+		</div>
+				
+		<div class="callback-form callback-services">
+		  <div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				<div class="section-heading">
+				  <h2>Invest <em>Calculator</em></h2>
+				  <span>Enter the values below:</span>
+				</div>
+			  </div>
+			  <div class="col-md-12">
+				<div class="contact-form">
+				  <form id="contact" action="" method="post">
+					<div class="row">
+					  <div class="col-lg-4 col-md-12 col-sm-112">
+							<div style="margin-left:115%" class="col-lg-10 col-md-50 col-sm-25" id=cover>
+									<form name=mvc><div id=tdr><table class=main><col class=w50><col class=w50><tr>
+									<input placeholder="Principal" class="form-control" id=principal><tr>
+									<input placeholder="Interest Rate" class="form-control" id=rate><tr>
+									<select placeholder="Interest Compounding" class="form-control" id=ci><option value=12>Monthly<option value=4 selected>Quarterly<option value=2>Half-yearly<option value=1>Yearly</select><tr>
+									<input style="margin-top:15%" placeholder="Period (months)" class="form-control" id=time><tr>
+									<td><button class="border-button" type=reset>Reset</button>
+									<td><button style="margin-left:15%" class="border-button"  type=button onclick=maturity();>Submit</button><tr>
+									<td><h5>Maturity Value</h5><td><input style="margin-top:35%" class="form-control" id=mv><tr>
+									<td><h5>Total Interest</h5><td><input style="margin-top:25%" class="form-control" id=mv1></table></div>
+								</form>
+							</div>	
+					  </div>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		<center>
+			<div>
+				<ol class="ivnote">
+				<center>
+				<strong> *Note </strong><br>
+				we are under the discussion with IRDA for obtaining insurance against fixed deposite<br>
+				</ol>
+				</center>
+			</div>
+		</center>
+		
+		<div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Website Copyright &copy; Naveen</p>
+			<p style="font-size:10px">Pictures used are free source images. Image Copyright &copy; to respected owners</p>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	
+	
+	<script src="vendor/jquery/jquery.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+		
+	</body>
+</html>

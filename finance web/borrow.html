@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="TemplateMo">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+		
+		<title> Borrow / Loan </title> 
+		
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/fontawesome.css">
+		<link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
+		<link rel="stylesheet" href="assets/css/owl.css">
+		<script type="text/javascript">
+			function calculate() 
+			{
+				var principal = document.loandata.principal.value;
+				var interest = document.loandata.interest.value / 100 / 12;
+				var payments = document.loandata.years.value * 12;
+				var x = Math.pow(1 + interest, payments);
+				var monthly = (principal*x*interest)/(x-1);
+				if (!isNaN(monthly) && (monthly != Number.POSITIVE_INFINITY) && (monthly != Number.NEGATIVE_INFINITY)) 
+				{
+					document.loandata.payment.value = round(monthly);
+					document.loandata.total.value = round(monthly * payments);
+					document.loandata.totalinterest.value = round((monthly * payments) - principal);
+				}
+				else 
+				{
+					document.loandata.payment.value = "";
+					document.loandata.total.value = "";
+					document.loandata.totalinterest.value = "";
+				}
+			}
+			function round(x) 
+			{
+			  return Math.round(x*100)/100;
+			}
+		</script>
+	</head>
+	<body>
+	
+	
+		<div class="sub-header">
+			  <div class="container">
+				<div class="row">
+				  <div class="col-md-8 col-xs-12">
+					<ul class="left-info">
+					  <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
+					  <li><a href="#"><i class="fa fa-phone"></i>953-581-7251</a></li>
+					</ul>
+				  </div>
+				  <div class="col-md-4">
+					<ul class="right-icons">
+					  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+		</div>
+		
+		
+		<header class="">
+			  <nav class="navbar navbar-expand-lg">
+				<div class="container">
+				  <a class="navbar-brand" href="index.html"><h2>Finance Company</h2></a>
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+					  <li class="nav-item active">
+						<a class="nav-link" href="index.html">Home
+						  <span class="sr-only">(current)</span>
+						</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="">About Us</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="borrow.html">Loan</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="invest.html">Invest</a>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			  </nav>
+		</header>
+		
+		 <div class="page-heading header-text">
+		  <div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				<h1>Loan EMI Calculator</h1>
+				<span><p>Loan calculator helps you calculate your Loan Emi easily, with total amount of interest to be payed</p></span>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	
+	
+	
+		<div class="callback-form callback-services">
+		  <div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				<div class="section-heading">
+				  <h2>EMI <em>Calculator</em></h2>
+				  <span>Enter the values below:</span>
+				</div>
+			  </div>
+			  <div class="col-md-12">
+				<div class="contact-form">
+				  <form id="contact" action="" method="post">
+					<div class="row">
+					  <div class="col-lg-4 col-md-12 col-sm-112">							
+							<div style="margin-left:115%" class="col-lg-10 col-md-50 col-sm-25" id=cover>
+								<form name=mvc><div id=tdr><table class=main><col class=w50><col class=w50><tr>
+									
+									<table>
+										<tr><td colspan="3"><b>Enter Loan Information:</b></td></tr>
+										<tr>
+											<td>1)</td>
+											<td>Amount of the loan (any currency):</td>
+											<td><input type="text" name="principal" size="12" 
+													 onchange="calculate();"></td>
+										</tr>
+										<tr>
+											<td>2)</td>
+											<td>Annual percentage rate of interest:</td>
+											<td><input type="text" name="interest" size="12" 
+													 onchange="calculate();"></td>
+										</tr>
+										<tr>
+											<td>3)</td>
+											<td>Repayment period in years:</td>
+											<td><input type="text" name="years" size="12" 
+														onchange="calculate();"></td>
+										</tr>
+											<td><button style="margin-left:15%" class="border-button"  type=button onclick=calculate();>Submit</button><tr>
+										<tr><td colspan="3">
+											<b>Payment Information:</b>
+										</td></tr>
+										<tr>
+											  <td>4)</td>
+											  <td>Your monthly payment will be:</td>
+											  <td><input type="text" name="payment" size="12"></td>
+										</tr>
+										<tr>
+											  <td>5)</td>
+											  <td>Your total payment will be:</td>
+											  <td><input type="text" name="total" size="12"></td>
+										</tr>
+										<tr>
+											<td>6)</td>
+											<td>Your total interest payments will be:</td>
+											<td><input type="text" name="totalinterest" size="12"></td>
+										</tr>
+									</table>
+									
+								</form>
+							</div>
+					  </div>
+					</div>
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	
+	
+	
+	
+	
+		<!--<div id="menu">
+			<div class="container" id="logo">
+				<a href="index.html">
+					<img src='logo.png'; class="image">
+				</a>
+			</div>
+			<div class="container1" id="name">
+				<center><h1 class="bname"> borrow </h1></center>
+			</div>
+			<ul>
+				<li><a href="index.html" accesskey="1" title="" >Homepage</a></li>
+				<li><a href="borrow.html" accesskey="2" title="" >Borrow / loans</a></li>
+				<li><a href="invest.html" accesskey="3" title="">Deposit / Invest</a></li>
+				<li><a href="" accesskey="4" title="">About Us</a></li>
+			</ul>
+			
+			<center>
+				<div class="bcal" id=outer>
+				<h3>EMI Calculator</h3>
+					<div id=cover>
+						<form name="loandata">
+						<table>
+							<tr><td colspan="3"><b>Enter Loan Information:</b></td></tr>
+							<tr>
+								<td>1)</td>
+								<td>Amount of the loan (any currency):</td>
+								<td><input type="text" name="principal" size="12" 
+										 onchange="calculate();"></td>
+							</tr>
+							<tr>
+								<td>2)</td>
+								<td>Annual percentage rate of interest:</td>
+								<td><input type="text" name="interest" size="12" 
+										 onchange="calculate();"></td>
+							</tr>
+							<tr>
+								<td>3)</td>
+								<td>Repayment period in years:</td>
+								<td><input type="text" name="years" size="12" 
+											onchange="calculate();"></td>
+							</tr>
+							<tr><td colspan="3">
+								<input type="button" value="Compute" onclick="calculate();">
+							</td></tr>
+							<tr><td colspan="3">
+								<b>Payment Information:</b>
+							</td></tr>
+							<tr>
+								  <td>4)</td>
+								  <td>Your monthly payment will be:</td>
+								  <td><input type="text" name="payment" size="12"></td>
+							</tr>
+							<tr>
+								  <td>5)</td>
+								  <td>Your total payment will be:</td>
+								  <td><input type="text" name="total" size="12"></td>
+							</tr>
+							<tr>
+								<td>6)</td>
+								<td>Your total interest payments will be:</td>
+								<td><input type="text" name="totalinterest" size="12"></td>
+							</tr>
+						</table>
+						</form>
+				</div>-->
+			</center>
+		</div>
+	</body>
+</html>
